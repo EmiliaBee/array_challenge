@@ -1,0 +1,63 @@
+<!<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="list.css">
+    <title> Array Challenge </title>
+   
+    <h3>Movie List</h3>
+    <div id='div1'></div>
+    <h3>Movie List in order</h3>
+    <div id= 'div2'></div> 
+
+  <style>
+      #a0{
+          color:red;
+      }
+
+      #b6{
+          color:blue;
+      }
+  </style>
+
+  <script>
+
+      const filmList = ["The Avengers", "Parasite", "Blade Runner", "Saw", "The Godfather"];
+      const filmListReverse = filmList.slice().reverse();
+ 
+    console.log(filmList);
+      console.log(filmListReverse);
+
+      filmListEnd = filmList.concat("Pulp Fiction");
+      console.log(filmListEnd);
+     
+      filmList.splice(0,0,"The Conjuring");
+      console.log(filmList);
+
+      filmList.splice(1,0,"Mean Girls");
+      console.log(filmList);
+
+    
+      var i;
+      for(i = 0; i < filmList.length; i++) {
+          var ptag = document.createElement('p');
+          ptag.setAttribute('id', 'a' + i)
+          var node = document.createTextNode(filmList[i])
+          ptag.appendChild(node)
+          var element = document.getElementById('div1')
+          element.appendChild(ptag)
+      }
+
+      var filmord = filmList.sort();
+      for(i = 0; i < filmList.length; i++) {
+          var ptag = document.createElement('ol');
+          ptag.setAttribute('id', 'b' + i)
+          var node = document.createTextNode(filmList[i])
+          ptag.appendChild(node)
+          var element = document.getElementById('div2')
+          element.appendChild(ptag)
+      }
+
+  </script>  
+  </html>
